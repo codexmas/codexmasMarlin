@@ -3,31 +3,33 @@ Personal printer SED scripts to cleanly modify the Marlin firmware before upload
 
 Managing your config changes with SED means you can pull the most recent changes via git, and not have to futz with editing the .h files manually ever again.
 
-*Workflow*
+## Workflow
+
 Create a GIT repo of your own to hold the scripts
 Checkout a fresh copy of Marlin, I am currently on the 1.1.0 RC6 Tag
 Identify lines that need changes, these typically are either ones that need to be uncommented, or a value changed, sometimes both.
 
+### Uncommenting
+`-e 's|//#define EEPROM_SETTINGS|#define EEPROM_SETTINGS|' \`
 
-Uncommenting:
--e 's|//#define EEPROM_SETTINGS|#define EEPROM_SETTINGS|' \
-
-Value change:
--e '\|#define BAUDRATE|s|250000|115200|' \
+### Value change
+`-e '\|#define BAUDRATE|s|250000|115200|' \`
 Search for '#define BAUDRATE', replace the value 250000 with 115200
 
-Uncommenting and Value change:
--e 's|//#define CUSTOM_MACHINE_NAME "3D Printer"|#define CUSTOM_MACHINE_NAME "Custom"|' \
+### Uncommenting and Value change
+`-e 's|//#define CUSTOM_MACHINE_NAME "3D Printer"|#define CUSTOM_MACHINE_NAME "Custom"|' \`
 
 Put these lines at the top of your script:
+```
 #!/bin/bash
 # Main config changes
 sed -i '' \
-
+```
 Once you have all the modifications, add the last line below to the script and ensure path to the file that needs sed to work it's magic is correct:
-~/GIT/Marlin/Marlin/Configuration.h
 
-run 'chmod +x your_script_name.sh' to allow execution of your script
+`~/GIT/Marlin/Marlin/Configuration.h`
+
+run `chmod +x your_script_name.sh` to allow execution of your script
 
 Run your script and then do a diff to see the changes in the Marlin repository.
 What you should see is the various changes you specified, take a few minutes to review each line to ensure none were missed. Sed doesn't really have an easy way to indicate pattern match failures, so eyeballs are required.

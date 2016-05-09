@@ -25,16 +25,17 @@ Put these lines at the top of your script:
 # Main config changes
 sed -i '' \
 ```
-Once you have all the modifications, add the last line below to the script and ensure path to the file that needs sed to work it's magic is correct:
+Once you have added all the modifications, add the last line below to the script and ensure the path to the file that needs sed to work it's magic on is correct:
 
 `~/GIT/Marlin/Marlin/Configuration.h`
 
-run `chmod +x your_script_name.sh` to allow execution of your script
+run `chmod +x your_script_name.sh` to allow execution of your script.
 
 Run your script and then do a diff to see the changes in the Marlin repository.
+
 What you should see is the various changes you specified, take a few minutes to review each line to ensure none were missed. Sed doesn't really have an easy way to indicate pattern match failures, so eyeballs are required.
 If there are changes missed you can revert the changes in the Marlin repo, make adjustments to your script and reapply!
 
-Now that you are happy with your changes you can Validate the setup in the Arduino IDE and upload if it all checks out, then revert again to have a clean Marlin repo.
+Now that you are happy with your changes you can validate the setup in the Arduino IDE and upload if it all checks out, then revert again to have a clean Marlin repo.
 
 Future updates to Marlin now super simple to maintain, as well as multiple printer profiles, one per script.

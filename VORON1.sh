@@ -2,10 +2,11 @@
 # Main config changes
 sed -i '' \
  -e '\|#define STRING_CONFIG_H_AUTHOR|s|none, default config|codexmas VORON:1|' \
- -e '\|#define BAUDRATE|s|250000|115200|' \
  -e 's|//#define CUSTOM_MACHINE_NAME "3D Printer"|#define CUSTOM_MACHINE_NAME "VORON:1"|' \
+ -e 's|//#define PS_DEFAULT_OFF|#define PS_DEFAULT_OFF|' \
  -e 's|#define TEMP_SENSOR_0.*|#define TEMP_SENSOR_0 1|' \
  -e 's|#define TEMP_SENSOR_BED.*|#define TEMP_SENSOR_BED 1|' \
+ -e '\|#define MAX_BED_POWER|s|255|128|' \
  -e 's|//#define COREXY|#define COREXY|' \
  -e '\|Z_MIN_PROBE_ENDSTOP_INVERTING|s|false|true|' \
  -e '\|INVERT_X_DIR|s|false|true|' \

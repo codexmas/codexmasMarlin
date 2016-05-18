@@ -4,19 +4,15 @@ sed -i '' \
  -e '\|#define STRING_CONFIG_H_AUTHOR|s|none, default config|codexmas VORON:1|' \
  -e 's|//#define CUSTOM_MACHINE_NAME "3D Printer"|#define CUSTOM_MACHINE_NAME "VORON:1"|' \
  -e 's|//#define PS_DEFAULT_OFF|#define PS_DEFAULT_OFF|' \
- -e 's|#define TEMP_SENSOR_0.*|#define TEMP_SENSOR_0 1|' \
+ -e 's|#define TEMP_SENSOR_0.*|#define TEMP_SENSOR_0 5|' \
  -e 's|#define TEMP_SENSOR_BED.*|#define TEMP_SENSOR_BED 1|' \
+ -e '\|#define HEATER_0_MAXTEMP|s|275|295|' \
+ -e '\|#define BED_MAXTEMP|s|150|142|' \
  -e '\|#define MAX_BED_POWER|s|255|128|' \
  -e 's|//#define COREXY|#define COREXY|' \
- -e 's|#define USE_XMIN_PLUG|//#define USE_XMIN_PLUG|' \
- -e 's|#define USE_YMIN_PLUG|//#define USE_YMIN_PLUG|' \
- -e 's|//#define USE_XMAX_PLUG|#define USE_XMAX_PLUG|' \
- -e 's|//#define USE_YMAX_PLUG|#define USE_YMAX_PLUG|' \
+ -e '\|Z_MIN_ENDSTOP_INVERTING|s|false|true|' \
  -e '\|Z_MIN_PROBE_ENDSTOP_INVERTING|s|false|true|' \
- -e '\|INVERT_X_DIR|s|false|true|' \
- -e '\|INVERT_Z_DIR|s|false|true|' \
- -e '\|X_HOME_DIR|s|-1|1|' \
- -e '\|Y_HOME_DIR|s|-1|1|' \
+ -e '\|INVERT_Y_DIR|s|true|false|' \
  -e '\|X_MAX_POS|s|200|228|' \
  -e '\|Y_MAX_POS|s|200|228|' \
  -e '\|Z_MAX_POS|s|200|228|' \
@@ -33,10 +29,12 @@ sed -i '' \
  -e '\|ABL_PROBE_PT_3_X|s|170|208|' \
  -e '\|ABL_PROBE_PT_3_Y|s|20|20|' \
  -e '\|X_PROBE_OFFSET_FROM_EXTRUDER|s|10|0|' \
- -e '\|Y_PROBE_OFFSET_FROM_EXTRUDER|s|10|45|' \
- -e '\|Z_RAISE_BEFORE_PROBING|s|15|10|' \
- -e '\|Z_RAISE_AFTER_PROBING|s|15|10|' \
+ -e '\|Y_PROBE_OFFSET_FROM_EXTRUDER|s|10|5|' \
+ -e '\|Z_RAISE_BEFORE_PROBING|s|15|5|' \
+ -e '\|Z_RAISE_BETWEEN_PROBINGS|s|15|3|' \
+ -e '\|Z_RAISE_AFTER_PROBING|s|15|5|' \
  -e 's|//#define FIX_MOUNTED_PROBE|#define FIX_MOUNTED_PROBE|' \
+ -e 's|//#define Z_SAFE_HOMING|#define Z_SAFE_HOMING|' \
  -e 's|//#define EEPROM_SETTINGS|#define EEPROM_SETTINGS|' \
  -e 's|//#define SDSUPPORT|#define SDSUPPORT|' \
  -e 's|//#define REPRAP_DISCOUNT_SMART_CONTROLLER|#define REPRAP_DISCOUNT_SMART_CONTROLLER|' \

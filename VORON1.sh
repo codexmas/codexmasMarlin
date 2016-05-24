@@ -8,7 +8,7 @@ sed -i '' \
  -e 's|#define TEMP_SENSOR_BED.*|#define TEMP_SENSOR_BED 1|' \
  -e '\|#define HEATER_0_MAXTEMP|s|275|295|' \
  -e '\|#define BED_MAXTEMP|s|150|142|' \
- -e '\|#define MAX_BED_POWER|s|255|128|' \
+ -e '\|#define MAX_BED_POWER|s|255|190|' \
  -e 's|//#define COREXY|#define COREXY|' \
  -e '\|Z_MIN_ENDSTOP_INVERTING|s|false|true|' \
  -e '\|Z_MIN_PROBE_ENDSTOP_INVERTING|s|false|true|' \
@@ -18,9 +18,10 @@ sed -i '' \
  -e '\|Z_MAX_POS|s|200|228|' \
  -e 's|//#define AUTO_BED_LEVELING_FEATURE|#define AUTO_BED_LEVELING_FEATURE|' \
  -e 's|//#define DEBUG_LEVELING_FEATURE|#define DEBUG_LEVELING_FEATURE|' \
- -e '\|LEFT_PROBE_BED_POSITION|s|15|40|' \
- -e '\|RIGHT_PROBE_BED_POSITION|s|170|188|' \
- -e '\|FRONT_PROBE_BED_POSITION|s|20|50|' \
+ -e '\|LEFT_PROBE_BED_POSITION|s|15|20|' \
+ -e '\|RIGHT_PROBE_BED_POSITION|s|170|208|' \
+ -e '\|FRONT_PROBE_BED_POSITION|s|20|20|' \
+ -e '\|BACK_PROBE_BED_POSITION|s|170|208|' \
  -e '\|AUTO_BED_LEVELING_GRID_POINTS|s|2|3|' \
  -e '\|ABL_PROBE_PT_1_X|s|15|20|' \
  -e '\|ABL_PROBE_PT_1_Y|s|180|190|' \
@@ -29,9 +30,11 @@ sed -i '' \
  -e '\|ABL_PROBE_PT_3_X|s|170|208|' \
  -e '\|ABL_PROBE_PT_3_Y|s|20|20|' \
  -e '\|X_PROBE_OFFSET_FROM_EXTRUDER|s|10|0|' \
- -e '\|Y_PROBE_OFFSET_FROM_EXTRUDER|s|10|5|' \
- -e '\|Z_RAISE_BEFORE_PROBING|s|15|5|' \
- -e '\|Z_RAISE_BETWEEN_PROBINGS|s|15|3|' \
+ -e '\|Y_PROBE_OFFSET_FROM_EXTRUDER|s|10|-45|' \
+ -e '\|Z_PROBE_OFFSET_FROM_EXTRUDER|s|10|0|' \
+ -e '\|XY_TRAVEL_SPEED|s|8000|15000|' \
+ -e '\|Z_RAISE_BEFORE_PROBING|s|15|2|' \
+ -e '\|Z_RAISE_BETWEEN_PROBINGS|s|15|2|' \
  -e '\|Z_RAISE_AFTER_PROBING|s|15|5|' \
  -e 's|//#define FIX_MOUNTED_PROBE|#define FIX_MOUNTED_PROBE|' \
  -e 's|//#define Z_SAFE_HOMING|#define Z_SAFE_HOMING|' \

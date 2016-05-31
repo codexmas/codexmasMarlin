@@ -19,9 +19,9 @@ sed -i '' \
  -e 's|//#define AUTO_BED_LEVELING_FEATURE|#define AUTO_BED_LEVELING_FEATURE|' \
  -e 's|//#define DEBUG_LEVELING_FEATURE|#define DEBUG_LEVELING_FEATURE|' \
  -e '\|LEFT_PROBE_BED_POSITION|s|15|20|' \
- -e '\|RIGHT_PROBE_BED_POSITION|s|170|208|' \
+ -e '\|RIGHT_PROBE_BED_POSITION|s|170|180|' \
  -e '\|FRONT_PROBE_BED_POSITION|s|20|20|' \
- -e '\|BACK_PROBE_BED_POSITION|s|170|208|' \
+ -e '\|BACK_PROBE_BED_POSITION|s|170|180|' \
  -e '\|AUTO_BED_LEVELING_GRID_POINTS|s|2|3|' \
  -e '\|ABL_PROBE_PT_1_X|s|15|20|' \
  -e '\|ABL_PROBE_PT_1_Y|s|180|190|' \
@@ -42,3 +42,8 @@ sed -i '' \
  -e 's|//#define SDSUPPORT|#define SDSUPPORT|' \
  -e 's|//#define REPRAP_DISCOUNT_SMART_CONTROLLER|#define REPRAP_DISCOUNT_SMART_CONTROLLER|' \
  ~/GIT/Marlin/Marlin/Configuration.h
+
+ sed -i '' \
+ -e '\|#define THERMAL_PROTECTION_HYSTERESIS|s|4|6|' \
+ -e '\|#define THERMAL_PROTECTION_BED_HYSTERESIS|s|2|4|' \
+ ~/GIT/Marlin/Marlin/Configuration_adv.h

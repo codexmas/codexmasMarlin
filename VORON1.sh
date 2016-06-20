@@ -6,10 +6,11 @@ sed -i '' \
  -e 's|//#define PS_DEFAULT_OFF|#define PS_DEFAULT_OFF|' \
  -e 's|#define TEMP_SENSOR_0.*|#define TEMP_SENSOR_0 5|' \
  -e 's|#define TEMP_SENSOR_BED.*|#define TEMP_SENSOR_BED 1|' \
- -e '\|#define HEATER_0_MAXTEMP|s|275|295|' \
- -e '\|#define BED_MAXTEMP|s|150|142|' \
+ -e '\|#define HEATER_0_MAXTEMP|s|275|305|' \
+ -e '\|#define BED_MAXTEMP|s|150|143|' \
  -e '\|#define MAX_BED_POWER|s|255|190|' \
  -e 's|//#define COREXY|#define COREXY|' \
+ -e 's|//#define ENDSTOPPULLUP_ZMIN|#define ENDSTOPPULLUP_ZMIN|' \
  -e '\|Z_MIN_ENDSTOP_INVERTING|s|false|true|' \
  -e '\|Z_MIN_PROBE_ENDSTOP_INVERTING|s|false|true|' \
  -e '\|INVERT_Y_DIR|s|true|false|' \
@@ -39,11 +40,9 @@ sed -i '' \
  -e 's|//#define FIX_MOUNTED_PROBE|#define FIX_MOUNTED_PROBE|' \
  -e 's|//#define Z_SAFE_HOMING|#define Z_SAFE_HOMING|' \
  -e 's|//#define EEPROM_SETTINGS|#define EEPROM_SETTINGS|' \
- -e 's|//#define SDSUPPORT|#define SDSUPPORT|' \
- -e 's|//#define REPRAP_DISCOUNT_SMART_CONTROLLER|#define REPRAP_DISCOUNT_SMART_CONTROLLER|' \
  ~/GIT/Marlin/Marlin/Configuration.h
 
  sed -i '' \
- -e '\|#define THERMAL_PROTECTION_HYSTERESIS|s|4|6|' \
- -e '\|#define THERMAL_PROTECTION_BED_HYSTERESIS|s|2|4|' \
+ -e '\|#define THERMAL_PROTECTION_HYSTERESIS|s|4|10|' \
+ -e '\|#define THERMAL_PROTECTION_BED_HYSTERESIS|s|2|6|' \
  ~/GIT/Marlin/Marlin/Configuration_adv.h

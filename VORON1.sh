@@ -40,6 +40,8 @@ sed -i '' \
  -e 's|//#define FIX_MOUNTED_PROBE|#define FIX_MOUNTED_PROBE|' \
  -e 's|//#define Z_SAFE_HOMING|#define Z_SAFE_HOMING|' \
  -e 's|//#define EEPROM_SETTINGS|#define EEPROM_SETTINGS|' \
+ -e 's|//#define SDSUPPORT|#define SDSUPPORT|' \
+ -e 's|//#define REPRAP_DISCOUNT_SMART_CONTROLLER|#define REPRAP_DISCOUNT_SMART_CONTROLLER|' \
  ~/GIT/Marlin/Marlin/Configuration.h
 
  sed -i '' \

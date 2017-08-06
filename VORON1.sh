@@ -23,9 +23,8 @@ sed -i '' \
  -e '\|XY_PROBE_SPEED|s|8000|15000|' \
  -e '\|Z_CLEARANCE_DEPLOY_PROBE|s|10|5|' \
  -e '\|Z_CLEARANCE_BETWEEN_PROBES|s|5|2|' \
- -e 's|//#define MESH_BED_LEVELING|#define MESH_BED_LEVELING|' \
- -e '\|#define MESH_INSET|s|10|18|' \
- -e 's|//#define MESH_G28_REST_ORIGIN|#define MESH_G28_REST_ORIGIN|' \
+ -e 's|//#define AUTO_BED_LEVELING_UBL|#define AUTO_BED_LEVELING_UBL|' \
+ -e '\|#define UBL_MESH_INSET|s|1|4|' \
  -e 's|//#define Z_SAFE_HOMING|#define Z_SAFE_HOMING|' \
  -e 's|//#define EEPROM_SETTINGS|#define EEPROM_SETTINGS|' \
  -e 's|//#define SDSUPPORT|#define SDSUPPORT|' \
@@ -33,6 +32,8 @@ sed -i '' \
  ~/GIT/Marlin/Marlin/Configuration.h
 
  sed -i '' \
+ -e 's|#define UBL_MESH_MIN_X (X_MIN_POS + UBL_MESH_INSET)|#define\UBL_MESH_MIN_X (X_MIN_POS + 6 + UBL_MESH_INSET)|' \
+ -e 's|#define UBL_MESH_MIN_Y (Y_MIN_POS + UBL_MESH_INSET)|#define UBL_MESH_MIN_Y (Y_MIN_POS + 45 + UBL_MESH_INSET)|' \
  -e '\|#define THERMAL_PROTECTION_HYSTERESIS|s|4|10|' \
  -e '\|#define THERMAL_PROTECTION_BED_HYSTERESIS|s|2|6|' \
  ~/GIT/Marlin/Marlin/Configuration_adv.h

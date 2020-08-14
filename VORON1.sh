@@ -31,6 +31,7 @@ sed -i '' \
  -e 's|//#define RESTORE_LEVELING_AFTER_G28|#define RESTORE_LEVELING_AFTER_G28|' \
  -e 's|#define MESH_INSET 1|#define MESH_INSET 10|' \
  -e '\|#define GRID_MAX_POINTS_X|s|10|8|' \
+ -e 's|//#define PROBE_PT_|#define PROBE_PT_|' \
  -e '\|#define PROBE_PT_1_X|s|15|114|' \
  -e '\|#define PROBE_PT_1_Y|s|180|50|' \
  -e '\|#define PROBE_PT_2_X|s|15|50|' \
@@ -42,5 +43,7 @@ sed -i '' \
  -e 's|//#define REPRAP_DISCOUNT_SMART_CONTROLLER|#define REPRAP_DISCOUNT_SMART_CONTROLLER|' \
  ~/GIT/Marlin/Marlin/Configuration.h
 
- #sed -i '' \
- #~/GIT/Marlin/Marlin/Configuration_adv.h
+ sed -i '' \
+ -e 's|//#define BABYSTEPPING|#define BABYSTEPPING|' \
+ -e 's|//#define BABYSTEP_ZPROBE_OFFSET|#define BABYSTEP_ZPROBE_OFFSET|' \
+ ~/GIT/Marlin/Marlin/Configuration_adv.h

@@ -9,9 +9,12 @@ Create a GIT repo of your own to hold the scripts
 Checkout a fresh copy of Marlin, I am currently on the 1.1.0 RC6 Tag
 Identify lines that need changes, these typically are either ones that need to be uncommented, or a value changed, sometimes both.
 
+On macOs avrdude is located in this folder:
+/Applications/Arduino.app/Contents/Java/hardware/tools/avr/bin
+
 ## Backup current working firmware
-`./avrdude -C ../etc/avrdude.conf -c wiring -b 115200 -p m2560 -P /dev/tty.usbmodem1433201 -U flash:r:marlin_fw.hex:i`
-`./avrdude -C ../etc/avrdude.conf -c wiring -b 115200 -p m2560 -P /dev/tty.usbmodem1433201 -U eeprom:r:marlin_eeprom.hex:i`
+`./avrdude -C ../etc/avrdude.conf -c wiring -b 115200 -p m2560 -P /dev/cu.usbmodem2102 -U flash:r:marlin_fw.hex:i`
+`./avrdude -C ../etc/avrdude.conf -c wiring -b 115200 -p m2560 -P /dev/cu.usbmodem2102 -U eeprom:r:marlin_eeprom.hex:i`
 
 ### Uncommenting
 `-e 's|//#define EEPROM_SETTINGS|#define EEPROM_SETTINGS|' \`

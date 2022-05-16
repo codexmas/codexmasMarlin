@@ -3,7 +3,7 @@
 sed -i '' \
  -e '\|#define STRING_CONFIG_H_AUTHOR|s|none, default config|codexmas VORON1.004|' \
  -e 's|//#define CUSTOM_MACHINE_NAME "3D Printer"|#define CUSTOM_MACHINE_NAME "VORON1.004"|' \
- -e '\|DEFAULT_NOMINAL_FILAMENT_DIA|s|3.0|2.85|' \
+ -e '\|DEFAULT_NOMINAL_FILAMENT_DIA|s|3.0|2.95|' \
  -e '\|#define POWER_SUPPLY|s|0|1|' \
  -e 's|//#define PS_DEFAULT_OFF|#define PS_DEFAULT_OFF|' \
  -e 's|#define TEMP_SENSOR_0.*|#define TEMP_SENSOR_0 5|' \
@@ -11,7 +11,7 @@ sed -i '' \
  -e '\|#define TEMP_HYSTERESIS|s|3|8|' \
  -e '\|#define TEMP_BED_HYSTERESIS|s|3|8|' \
  -e '\|#define HEATER_0_MAXTEMP|s|275|300|' \
- -e '\|#define BED_MAXTEMP|s|150|115|' \
+ -e '\|#define BED_MAXTEMP|s|150|130|' \
  -e '\|#define MAX_BED_POWER|s|255|190|' \
  -e 's|//#define COREXY|#define COREXY|' \
  -e 's|//#define ENDSTOPPULLUP_ZMIN|#define ENDSTOPPULLUP_ZMIN|' \
